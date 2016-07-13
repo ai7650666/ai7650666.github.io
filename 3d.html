@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
+<title>3d圆环</title>
+<link rel="stylesheet" href="css/common.css"/>
+<style>
+
+html{font-size:20px;}
+.work1{background:#000; overflow:hidden;width:68.3rem;height:100%;margin:0 auto;position:relative;}
+.work1 ul{
+	width:6.65rem; height:10rem; margin:15rem auto; position:relative; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(40rem) 
+	rotateX(0) rotateY(0); 	
+}
+.work1 ul li{
+	width:6.65rem; height:10rem; position:absolute; top:0; left:0; -webkit-transform: rotateY(0deg) translateZ(0rem); border-radius:0.75rem; overflow:
+	hidden; box-shadow:0rem 0rem 1rem #fff; 								
+	}
+.work1 ul li img{width:6.65rem;height:10rem;}
+</style>
+<script>
+var rem = 20;
+function changeW(){
+	rem = 20/1360*document.documentElement.clientWidth;
+	document.documentElement.style.fontSize = rem + "px";	
+}
+window.addEventListener("resize",changeW,false);
+window.onload=function(){
+	
+	/*作品展示1开始*/
+	
+		 changeW()
+		var oWork1 = document.querySelector('.work1');
+		var oUl=oWork1.querySelector("ul")
+		var aLi = oWork1.querySelectorAll('ul li');
+		var bOk = false;
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].style.WebkitTransition = '1s all ease '+(aLi.length-i)*100+'ms';
+			aLi[i].style.WebkitTransform = 'rotateY('+i*360/aLi.length+'deg) translateZ(300px)';
+		}
+		function tranEnd(){
+			aLi[0].removeEventListener('transitionend',tranEnd,false);
+			bOk = true;
+		}
+		aLi[0].addEventListener('transitionend',tranEnd,false);
+		var x = 0;
+		var y = 0;
+		var iSpeedX = 0;
+		var iSpeedY = 0;
+		var lastX = 0;
+		var lastY = 0;
+		var timer = null;
+		oUl.onmousedown=function(ev){
+			if(!bOk)return;
+			
+			clearInterval(timer);
+			var disX = ev.pageX-y;
+			var disY = ev.pageY-x;
+			document.onmousemove=function(ev){
+				x = ev.pageY-disY;
+				y = ev.pageX-disX;
+				oUl.style.WebkitTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
+				iSpeedX = ev.pageX-lastX;
+				iSpeedY = ev.pageY-lastY;
+				
+				lastX = ev.pageX;
+				lastY = ev.pageY;
+			};
+			document.onmouseup=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+				clearInterval(timer);
+				timer = setInterval(function(){
+					iSpeedX*=0.95;
+					iSpeedY*=0.95;
+					x += iSpeedY;
+					y += iSpeedX;
+					oUl.style.WebkitTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
+					
+					if(Math.abs(iSpeedX)<1)iSpeedX=0;
+					if(Math.abs(iSpeedY)<1)iSpeedY=0;
+					if(iSpeedX==0&&iSpeedY==0){
+						clearInterval(timer);
+					}
+				},30);
+			};
+			return false;
+		};
+		
+	
+}
+</script>
+</head>
+
+<body>
+	 <div class="work1">
+          <ul>
+              <li><img src="img/01.png"/></li>
+              <li><img src="img/02.png" /></li>
+              <li><img src="img/03.png" /></li>
+              <li><img src="img/08.png"/></li>
+              <li><img src="img/05.png"/></li>
+              <li><img src="img/06.png"/></li>
+              <li><img src="img/07.png" /></li>
+              <li><img src="img/08.png" /></li>
+              <li><img src="img/09.png" /></li>
+              <li><img src="img/01.png"/></li>
+              <li><img src="img/02.png" /></li>
+          </ul>
+   </div>
+</body>
+</html>
