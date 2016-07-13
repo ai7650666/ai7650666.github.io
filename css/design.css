@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+
+#warp{width:100%;height:100%;background:#fff;position:relative;}
+
+
+/*作品展1示开始*/
+#warp .works .work1{background:#000; overflow:hidden;width:80%;height:80%;margin:0 auto;position:relative;}
+#warp .works .work1 ul{
+	width:133px; height:200px; margin:200px auto; position:relative; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) 
+	rotateX(0) rotateY(0); 	
+}
+#warp .works .work1 ul li{
+	width:133px; height:200px; position:absolute; top:0; left:0; -webkit-transform: rotateY(0deg) translateZ(0px); border-radius:15px; overflow:
+	hidden; box-shadow:0px 0px 20px #fff; 								
+	}
+#warp .works .work1 ul li img{width:133px;height:200px;}
+/*作品展示1结束*/
+/*作品展示2开始*/
+#warp .works .work2{
+	background:#999; overflow:hidden;height:800px;
+	padding-top:100px;position:relative;
+}
+#warp .works .work2 .tab{
+	margin-left:35%;margin-bottom:100px;
+	}
+#prev{
+	width:128px;height:60px;background:#9C3;display:inline-block;text-align:center;color:#0F9;
+	margin-right:100px;font:bold 30px/60px  Arial, Helvetica, sans-serif; color:#fff; border-radius:10px
+	;text-shadow:2px 2px 5px #000; box-shadow:inset 0px 0px 10px #fff,0px 10px 5px #000; }
+#prve:hover{
+	box-shadow:inset 0px 0px 30px #fff,0px 10px 5px #000;
+}
+#prev:active{
+	top:108px;
+	box-shadow:inset 0px 0px 0px #fff,0px 2px 5px #000;
+	text-shadow:0px 0px 0px #000;
+}
+
+#next{
+	width:128px;height:60px;background:#39F;display:inline-block;text-align:center;color:#0F9;
+	margin-right:100px;font:bold 30px/60px  Arial, Helvetica, sans-serif; color:#fff; border-radius:10px
+	;text-shadow:2px 2px 5px #000; box-shadow:inset 0px 0px 10px #fff,0px 10px 5px #000; }
+#next:hover{
+	box-shadow:inset 0px 0px 30px #fff,0px 10px 5px #000;
+}
+#next:active{
+	top:108px;
+	box-shadow:inset 0px 0px 0px #fff,0px 2px 5px #000;
+	text-shadow:0px 0px 0px #000;
+}
+#warp .works .work2 ul{
+	 width:500px; height:400px; margin:0 auto; position:relative;
+	  -webkit-transform-style:preserve-3d;
+	  }
+#warp .works .work2 ul li{ 
+	width:500px; height:400px; background:#399; border:1px solid #000; 
+ 	opacity:0; position:absolute; -webkit-transition:1s all ease;
+ }
+#warp .works .work2 ul li img{ 
+	width:500px; height:400px;
+}
+#warp .works .work2 ul li.l2{opacity:0; z-index:3; -webkit-transform: perspective(800px) translate(-350px,0) rotateY(30deg) ;}
+#warp .works .work2 ul li.l1{opacity:1; z-index:4; -webkit-transform: perspective(800px) translate(-300px,0) rotateY(30deg) ;}
+#warp .works .work2 ul li.cur{opacity:1; z-index:5;}
+#warp .works .work2 ul li.r1{opacity:1; z-index:4; -webkit-transform: perspective(800px) translate(300px,0) rotateY(-30deg) ;}
+#warp .works .work2 ul li.r2{opacity:0; z-index:3; -webkit-transform: perspective(800px) translate(350px,0) rotateY(-30deg) ;}
+/*作品展示2结束*/
+
+/*导航开始*/
+#warp .right .nav{width:600px;height:40px;background:;margin-top:10px;
+	margin-right:50px;border-radius:20px;text-align:center;
+	font:bold 20px/40px 微软雅黑;color:#fff;box-shadow:0px 0px 0px #ccc;
+}
+/*导航结束*/

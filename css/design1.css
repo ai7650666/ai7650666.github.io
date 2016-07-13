@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+#warp {
+	width:100%;height:100%;
+	position:relative;top:0;left:0;
+	 max-width: 1336px;
+  	min-width: 320px;
+}
+/*head开始*/
+#head{
+	width:100%;height:665px;
+	background:url(file:///C|/Users/Administrator/Desktop/design/img/d1a20cf431adcbefb0c5e13aafaf2edda3cc9f1d.jpg) no-repeat;
+	background-size:100% 100%;position:relative;
+	}
+
+/*@keyframes test{
+	
+	from{-webkit-transform:scale(1,1);opacity:0.5;}
+	to{-webkit-transform:scale(1.03,1.03);opacity:1;}
+	
+}*/
+#head .ph{
+	width:15%;
+	border-radius:50%;
+	position:absolute;top:8%;left:50%;
+	margin-left:-7%;background-size:100% 100%;
+	opacity:0.8;
+	-webkit-transform:perspective(800px) rotateX(0deg) rotateY(0deg);
+	-webkit-transition:1s all ease;
+	animation:test 0.5s ease infinite alternate 0.5s running;
+	}
+
+/*#head .ph:hover{
+	opacity:1;-webkit-transform:perspective(800px) rotateY(0deg) scale(1.2,1.2);
+	-webkit-transition: 1s all ease;
+	}*/
+#head .miusic{
+	width:40px;
+	position:absolute;top:50px;left:50px;
+	}
+#head h2{
+	position:absolute;top:100px;left:420px;
+	font:bold 40px 微软雅黑;color:#5173b3;cursor:pointer;
+	}
+#head ul{position:absolute;bottom:200px;right:50px;z-index:5;width:400px;height:50px;}
+#head ul li{float:left;width:100px;height:50px;text-align:center;line-height:50px;}
+#head ul li.bar{ position:absolute;left:0;top:0;z-index:-1; background:rgba(153,51,255,1);border-radius:20px; }
+#head ul li a{color:#999;font:bold 20px 微软雅黑;}
+/*head结束*/
+/*skil简介开始*/
+#skil{
+	width:100%;height:665px;background:url(file:///C|/Users/Administrator/Desktop/design/img/d1a20cf431adcbefb0c5e13aafaf2edda3cc9f1d.jpg) 	no-repeat;background-size:100% 100%;position:relative;
+	}
+#skil h2{
+	text-align:center;font:bold 100px "Times New Roman",
+	 Times, serif;color:#999;margin-top:-150px;
+	 }
+#skil ul {width:100%;margin-top:50px;position:absolute;}
+#skil ul li{width:33%;}
+#skil ul li.skil1{
+	background:url(file:///C|/Users/Administrator/Desktop/design/img/0001.png) no-repeat;
+	width:300px;height:300px;background-size:100% 100%;margin:70px;border-radius:50%;
+	overflow:hidden;
+}
+#skil ul li.skil2{
+	background:url(file:///C|/Users/Administrator/Desktop/design/img/0LzMwLzcxNjAzMDAxMzgyNjIuanBn.jpg) no-repeat;
+	width:300px;height:300px;background-size:100% 100%;float:left;margin:70px;border-radius:50%;
+	overflow:hidden;
+}
+#skil ul li.skil3{
+	background:url(file:///C|/Users/Administrator/Desktop/design/img/9367011618232.jpg) no-repeat;
+	width:300px;height:300px;background-size:100% 100%;float:left;margin:70px;border-radius:50%;
+	overflow:hidden;
+}
+#skil ul li p{font:bold 32px/270px "Times New Roman", Times, serif;color:#966;text-align:center;}
+#skil ul li div{
+	border-radius:50%;
+	background:#93C;opacity:0.5;
+	font:bold 30px/270px "Times New Roman", Times, serif;color:#000;
+	text-align:center;
+	-webkit-transform:scale(1.2,1.2);
+	-webkit-transition:1s all ease;
+	width:300px;height:0px;
+	overflow:hidden;
+}
+#skil ul li:hover div{
+	height:300px;
+}
+
+/*skil简介结束*/ 
+/*about开始*/
+#about{
+	width:100%;height:665px;background:url(file:///C|/Users/Administrator/Desktop/design/img/show_fengjingta_290624_4.jpg) no-repeat;			    background-size:100% 100%;position:relative;
+	}
+#about .information .con{
+		font:bold 100px Arial, Helvetica, sans-serif;text-align:center;padding-top:50px;
+	}
+#about .information ul{
+	width:500px;padding:20px;position:absolute;top:200px;left:100px;font:bold 30px Arial, Helvetica, sans-serif;line-height:30px;
+}
+
+#about .information ul li{margin-bottom:30px;}
+#about .information ul li span{position:absolute;left:300px;}
+/*about结束*/   

@@ -1,0 +1,32 @@
+/*
+智能社© - http://www.zhinengshe.com/
+
+微博：@北京智能社
+微信：zhi_neng_she
+
+最具深度的前端开发培训机构 HTML+CSS/JS/HTML5
+*/
+
+
+/* http://www.zhinengshe.com/ */
+
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+img { border: none; }
+
+body { background: #ecfaff; }
+
+.box { width:600px; height: 300px; overflow: hidden; position: relative; margin: 150px auto 0; background: #ccc; }
+.box ol { position: absolute; margin-left:150px; bottom: 5px; z-index: 2; }
+.box ol li { float: left; margin-right: 30px; cursor: pointer;border-radius:50%;width:40px;height:40px; text-align:center;font:bold 20px/40px Verdana, Geneva, sans-serif;color:#fff; background:rgba(0,0,0,0.5);}
+.box .active {border-radius:50%;width:40px;height:40px; text-align:center;font:bold 20px/40px Verdana, Geneva, sans-serif;color:#fff; background:rgba(255,204,51,1); }
+
+.box ul { position: absolute; top: 0; left: 0; z-index: 1; }
+.box ul li { width: 600px; height: 300px; float: left; }
+.box ul img { float: left; width: 600px; height: 300px; }
+
+.box p { width: 20px; height: 20px; line-height: 20px; font-family: arial; color: #fff; text-align: center; font-weight: bold; background: #333; border: 1px solid #ccc; position: absolute; top: 60px; z-index: 2; cursor: pointer; }
+.box .prev { left: 10px; width:40px;height:40px;background:rgba(0,0,0,0.5);margin-top:70px;text-align:center;font:bold 40px/40px 宋体;}
+.box .next { right: 10px;width:40px;height:40px;background:rgba(0,0,0,0.5);margin-top:70px;text-align:center;font:bold 40px/40px 宋体; }
+.box .next:hover{background:rgba(102,0,255,0.5);}
+.box .prev:hover{background:rgba(102,0,255,0.5);}
