@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+body{ background:#000;text-align:center;}
+#c1{ background:#fff;padding:40px;}
+</style>
+<script>
+window.onload = function(){
+	var oC = document.getElementById("c1");
+	var gd = oC.getContext("2d");
+	
+	var arr = [200,300,400,280,180,600,300];
+	
+	var space = oC.width/(arr.length*4-1);
+	var w = 3*space;
+	
+	var iMax = Math.max(...arr);
+	
+	var arrH = [];
+	
+	for(var i = 0; i < arr.length; i++){
+		arrH.push(arr[i]/iMax*oC.height);
+	}
+	
+	// 绘制矩形
+	for(var i = 0; i < arrH.length; i++){
+		
+		var r = parseInt(Math.random()*256);
+		var g = parseInt(Math.random()*256);
+		var b = parseInt(Math.random()*256);
+		
+		gd.fillStyle = "rgb("+r+","+g+","+b+")";
+		gd.fillRect((w+space)*i,oC.height - arrH[i],w,arrH[i]);
+		gd.strokeRect((w+space)*i,oC.height - arrH[i],w,arrH[i]);
+	}
+	
+};
+
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="500"></canvas>
+</body>
+</html>

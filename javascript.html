@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>css3&html5 show</title>
+<link rel="stylesheet" href="css/common.css"/>
+<style>
+#box{width:100%;height:665px;background:url(img/t01201c378cecf8d64f.jpg) no-repeat;background-size:100% 100%;}
+#box h2{text-align:center;font:bold 60px  "MS Serif", "New York", serif;padding-top:50px;color:#fff}
+#box ul{width:888px;height:588px;margin:0 auto;}
+#box ul li{float:left;margin:20px;border:3px solid #9CC;position:relative;}
+#box ul li.show1{width:250px;height:120px;background:url(img/js01.png) no-repeat;background-size:100% 100%;}
+
+#box ul li div{width:100%;height:0px;position:absolute;bottom:0;text-align:center;font:bold 15px/50px Verdana, Geneva, sans-serif;color:#fff;background:rgba(0,51,255,0.5);overflow:hidden;-webkit-transition:1s all ease;}
+#box ul li:hover div{height:50px;-webkit-transition:1s all ease;}
+#box ul li{width:250px;height:120px;}
+#box ul li.show2{background:url(img/js02.png) no-repeat;background-size:100% 100%;}
+#box ul li.show3{background:url(img/js03.png) no-repeat;background-size:100% 100%;}
+#box ul li.show4{background:url(img/js04.png) no-repeat;background-size:100% 100%;}
+#box ul li.show5{background:url(img/js05.png) no-repeat;background-size:100% 100%;}
+#box ul li.show6{background:url(img/js06.png) no-repeat;background-size:100% 100%;}
+#box ul li.show7{background:url(img/js07.png) no-repeat;background-size:100% 100%;}
+#box ul li.show8{background:url(img/js08.png) no-repeat;background-size:100% 100%;}
+#box ul li.show9{background:url(img/js10.png) no-repeat;background-size:100% 100%;}
+</style>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById("box");
+	var oUl=oBox.children[1];
+	var aLi=oUl.children;
+	for(var i=0;i<aLi.length;i++){
+		var aDiv=aLi[i].getElementsByTagName("div")
+		aLi[i].onmouseover=function(){
+			aDiv[0].style.display="block";
+		}
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div id="box">
+
+	<h2>JavaScript 作品show</h2>
+	<ul>
+    	<a href="https://ai7650666.github.io/lagou.html">
+    		<li class="show1">
+            	<div class="word">点击切换轮播图</div>
+        	</li>
+       </a>
+       <a href="https://ai7650666.github.io/change.html">
+            <li class="show2">
+                <div class="content">照片墙</div>	
+       		 </li>
+        </a>
+        <a href="https://ai7650666.github.io/shoufengqin.html">
+            <li class="show3">
+                <div class="content">手风琴</div>	
+            </li>
+        </a>
+        <a href="https://ai7650666.github.io/move.html">
+            <li class="show4">
+                <div class="content">弹性碰撞</div>	
+            </li>
+        </a>
+        <a href="https://ai7650666.github.io/dragbanner.html">
+            <li class="show5">
+                <div class="content">拖拽切换</div>	
+            </li>
+        </a>
+        <a href="https://ai7650666.github.io/gundong.html">
+            <li class="show6">
+                <div class="content">无缝滚动</div>	
+            </li>
+        </a>
+        <a href="https://ai7650666.github.io/float.html">
+            <li class="show7">
+                <div class="content">浮动广告</div>	
+            </li>
+        </a>
+        <a href="https://ai7650666.github.io/select.html">
+            <li class="show8">
+                <div class="content">自动播放轮播图滑入停止离开播放</div>	
+            </li>
+        </a>
+        <a href="https://ai7650666.github.io/fangdajing.html">
+            <li class="show9">
+                <div class="content">淘宝放大镜</div>	
+            </li>
+        </a>
+    </ul>
+</div>
+</body>
+</html>

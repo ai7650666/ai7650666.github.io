@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手风琴</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+body{background:#000;}
+#div1 {
+	width:946px; height:312px; 
+	border:1px solid black; margin:100px auto; 
+	position:relative; overflow:hidden;
+}
+#div1 span {
+	width:20px; height:305px; display:block;
+	 position:absolute; left:0; top:0;
+	 text-align:center;
+	 font:bold 25px/305px 微软雅黑;color:#000;
+}
+#div1 div {
+	width:840px; height:305px; 
+	position:absolute; left:0; top:0;
+	 background:#CCC;border:3px solid #999;
+}
+
+</style>-
+<script src="js/move8.js"></script>
+
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById('div1');
+	var aDiv=oDiv.children;
+	for(var i=0;i<aDiv.length;i++){
+		aDiv[i].style.left=i*20+'px';//初始化琴叶的位置
+	}	
+	
+	for(var i=0;i<aDiv.length;i++){
+		//	←<=index	→>index
+		(function(index){
+			aDiv[i].onmouseover=function(){
+				for(var i=0;i<aDiv.length;i++){
+					if(i<=index){
+						//←	
+						console.log('←',aDiv[i]);
+						//aDiv[i].style.left=i*20+'px';
+						move(aDiv[i],{left:i*20},{time:700});
+					}else if(i>index){
+						//→	
+						console.log(aDiv[i]);
+						//left = div.w+(i-1)*span.w
+						//aDiv[i].style.left=840+(i-1)*20+'px';
+						move(aDiv[i],{left:840+(i-1)*20},{time:700});
+					}
+				}
+			};	
+		})(i);
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<div><img src="img/s01.jpg" /><span style="background:#C00;">1</span></div>
+	<div><img src="img/s02.jpg" /><span style="background:#0fc;">2</span></div>
+	<div><img src="img/s03.jpg" /><span style="background:#af0;">3</span></div>
+	<div><img src="img/s04.jpg" /><span style="background:#c0f;">4</span></div>
+	<div><img src="img/s01.jpg" /><span style="background:#e0f;">5</span></div>
+	<div><img src="img/s02.jpg" /><span style="background:#a90;">6</span></div>
+</div>
+</body>
+</html>

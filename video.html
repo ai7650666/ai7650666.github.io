@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>video</title>
+<style>
+*{margin:0; padding:0;}
+body{ text-align:center;}
+video{ width:800px;margin-top:50px;}
+#box{width:800px;height:50px; background:#000; margin:0px auto; text-align:left;}
+#box a{float:left; text-decoration:none; color:#fff; width:50px; height:50px; text-align:center; line-height:50px; font-size:20px;}
+.vol_box{float:left; margin-right:10px; width:100px; height:10px; background:#fff; margin-top:20px; position:relative;}
+.vol_box .vol_bar{width:100%; height:100%; position:absolute; top:0; left:0; background:#f90;}
+.vol_box .vol_btn{width:20px; height:20px; background:-webkit-radial-gradient(#fff,#333); position:absolute; top:50%; right:0; margin-top:-10px; border-radius:50%; cursor:pointer;}
+.pro_box{float:left; width:300px; height:10px; background:#fff; margin-top:20px; position:relative;}
+.pro_box .pro_bar{width:0; height:100%; position:absolute; top:0; left:0; background:#f90;}
+.pro_box .pro_btn{width:20px; height:20px; background:-webkit-radial-gradient(#fff,#333); position:absolute; top:50%; left:0; margin-top:-10px; border-radius:50%; cursor:pointer;}
+.time_show{ float:left;  height:50px; line-height:50px; text-align:center;padding:0 20px; color:#fff; font-size:20px;}
+</style>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
+function getCnTime(s){
+	var m = Math.floor(s/60);
+	s%=60;
+	return toDou(m)+':'+toDou(Math.floor(s));
+}
+window.onload=function(){
+	var oV = document.querySelector('.v1');
+	var oPlay = document.querySelector('.play');
+	var oPause = document.querySelector('.pause');
+	var oStop = document.querySelector('.stop');
+	var oVolBox = document.querySelector('.vol_box');
+	var oVolBar = document.querySelector('.vol_bar');
+	var oVolBtn = document.querySelector('.vol_btn');
+	var oVol = document.querySelector('.vol');
+	
+	var oProBox = document.querySelector('.pro_box');
+	var oProBar = document.querySelector('.pro_bar');
+	var oProBtn = document.querySelector('.pro_btn');
+	
+	var oTimeShow = document.querySelector('.time_show');
+	
+	oPlay.onclick=function(){
+		oV.play();
+	};
+	oPause.onclick=function(){
+		oV.pause();
+	};
+	oStop.onclick=function(){
+		//alert(oV.currentTime);
+		oV.pause();
+		oV.currentTime = 0;
+	};
+	var bOk = false;
+	oVol.onclick=function(){
+		bOk = !bOk;
+		oV.muted = bOk;
+	};
+	oVolBtn.onmousedown=function(ev){
+		var disX = ev.pageX-oVolBtn.offsetLeft;
+		document.onmousemove=function(ev){
+			var l = ev.pageX-disX;
+			if(l<0){
+				l = 0;
+			}else if(l>oVolBox.offsetWidth-oVolBtn.offsetWidth){
+				l = oVolBox.offsetWidth-oVolBtn.offsetWidth;
+			}
+			oVolBtn.style.left = l+'px';
+			
+			var scale = l/(oVolBox.offsetWidth-oVolBtn.offsetWidth);
+			oVolBar.style.width= scale*oVolBox.offsetWidth+'px';
+			
+			oV.volume = scale;
+			
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		};
+		return false;
+	};
+	oProBtn.onmousedown=function(ev){
+		var disX = ev.pageX-oProBtn.offsetLeft;
+		document.onmousemove=function(ev){
+			var l = ev.pageX-disX;
+			if(l<0){
+				l = 0;
+			}else if(l>(oProBox.offsetWidth-oProBtn.offsetWidth)){
+				l = oProBox.offsetWidth-oProBtn.offsetWidth;
+			}
+			oProBtn.style.left = l+'px';
+			var scale = l/(oProBox.offsetWidth-oProBtn.offsetWidth);
+			oProBar.style.width=  scale*oProBox.offsetWidth+'px';
+			
+			oV.currentTime = scale*oV.duration;
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		};
+		return false;
+	};
+	
+	
+	
+	oV.ontimeupdate = function(){
+		var scale = oV.currentTime/oV.duration;
+		oProBar.style.width = scale*oProBox.offsetWidth+'px';
+		oProBtn.style.left = scale*(oProBox.offsetWidth-oProBtn.offsetWidth)+'px';
+		
+		oTimeShow.innerHTML = getCnTime(oV.currentTime)+'/'+getCnTime(oV.duration);
+	};
+	
+};
+</script>
+</head>
+<body>
+	<video class="v1" src="MP4/03000801005676DEF287D22FAB194B977604F8-C99B-2BCB-F68D-B93D794C5C62.mp4">
+		您的浏览器版本过低，请尽快升级。呵呵
+	</video>
+	<div id="box">
+		<a href="javascript:;" class="play">播放</a>
+		<a href="javascript:;" class="pause">暂停</a>
+		<a href="javascript:;" class="stop">停止</a>
+		<a href="javascript:;" class="vol">音量</a>
+		<div class="vol_box">
+			<div class="vol_bar"></div>
+			<div class="vol_btn"></div>
+		</div>
+		<div class="pro_box">
+			<div class="pro_bar"></div>
+			<div class="pro_btn"></div>
+		</div>
+		<div class="time_show">
+			00:00/00:00
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

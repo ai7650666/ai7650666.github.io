@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>canvas进度条</title>
+<style>
+*{margin:0;padding:0}
+body{ background:#000;}
+#c1{ background:#fff;text-align:center;margin:80px 268px;}
+</style>
+<script>
+function d2a(n){
+	return n*Math.PI/180;	
+}
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n)+n);
+}
+window.onload = function(){
+	var oC = document.getElementById("c1");
+	var gd = oC.getContext("2d");
+	
+	
+	var cx = 400;
+	var cy = 250;
+	var r  = 100;
+	
+	var a=rnd(0,256);
+	var g=rnd(0,256);
+	var b=rnd(0,256);  
+	  
+	  
+	var h = 60;
+	gd.font = h + "px kaiti";
+	gd.fillStyle = "rgb("+r+","+g+","+b+")";
+	
+	var d = 0;
+	gd.lineWidth = "15";
+	
+	
+	var timer = setInterval(function(){
+		
+		drawArc(cx,cy,r,0,d++);
+		gd.strokeStyle = "rgb("+a*(d/360)+","+g+","+b+")";
+		
+		//文字
+		var str = parseInt(d/360*100) + "%";
+		
+		var w = gd.measureText(str).width;
+		gd.fillText(str,cx - w/2,cy + h/2);
+		
+		if(d > 360){
+			clearInterval(timer);
+		}
+	},16)
+	
+	
+	function drawArc(cx,cy,r,s,e){
+		s -= 90;
+		e -= 90;
+		gd.clearRect(0,0,oC.width,oC.height);
+		gd.beginPath();
+		gd.arc(cx,cy,r,d2a(s),d2a(e),false);
+		gd.stroke();		
+	}
+	
+	
+	
+};
+</script>
+</head>
+
+<body>
+<canvas id="c1" width="800" height="500"></canvas>
+</body>
+</html>

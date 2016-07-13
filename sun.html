@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>关照投影</title>
+<style>
+*{margin:0; padding:0;}
+#sun{width:100px; height:100px; background:#F90; border-radius:50%; box-shadow:0px 0px 100px #F96; position:absolute; left:0; top:0;}
+p{height:50px; text-align:center; line-height:50px; font-size:50px; font-family:微软雅黑; font-weight: bold; margin-top:200px; color:blue; text-shadow:0px 0px 0px #000;}
+</style>
+<script>
+window.onload=function(){
+	var oSun = document.querySelector('#sun');
+	var oP = document.querySelector('p');
+	document.onmousemove=function(ev){
+		oSun.style.left = ev.pageX-oSun.offsetWidth/2+'px';
+		oSun.style.top = ev.pageY-oSun.offsetHeight/2+'px';
+		
+		var x = (oP.offsetLeft+oP.offsetWidth/2)-ev.pageX;
+		var y = (oP.offsetTop+oP.offsetHeight/2)-ev.pageY;
+		
+		var dis = Math.sqrt(x*x+y*y);
+		
+		oP.style.textShadow = x/3+'px '+y/3+'px '+dis/20+'px #000';
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="sun"></div>
+<p>越努力，越幸运</p>
+</body>
+</html>

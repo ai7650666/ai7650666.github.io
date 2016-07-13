@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>淘宝放大镜</title>
+<style>
+body{background:#000;}
+#box{text-align:center;position:absolute;left:30%;top:50%;margin-left:-155px;margin-top:-155px;}
+#div1{width:310px;height:310px;position:absolute;top:0;left:0;background:url(img/t0120077c3b14515669.jpg) no-repeat;background-size:100% 100%;border:3px solid green;}
+#div2{width:100px;height:100px;background:pink;position:absolute;top:0;left:0;opacity:0.5;display:none;}
+#div3{width:310px;height:310px;position:absolute;top:0;left:400px;overflow:hidden;display:none;}
+#div4{position:absolute;top:0;left:0;width:626px;height:626px;background:url(img/t0120077c3b14515669.jpg) no-repeat; background-size:100% 100%;border:3px solid green;}
+
+</style>
+<script>
+window.onload=function(){
+	var oDiv1=document.getElementById("div1");
+	var oDiv2=document.getElementById("div2");
+	var oDiv3=document.getElementById("div3");
+	var oDiv4=document.getElementById("div4");
+	oDiv1.onmouseover=function(){
+	oDiv3.style.display=oDiv2.style.display="block";
+		
+	}
+	
+	oDiv1.onmouseout=function(){
+		oDiv3.style.display=oDiv2.style.display="none";
+	}
+	
+	oDiv2.onmousedown=function(ev){
+		var oEvt=ev||event;
+		var disX=oEvt.clientX-oDiv2.offsetLeft;
+		var disY=oEvt.clientY-oDiv2.offsetTop;
+		document.onmousemove=function(ev){
+			var oEvt=ev||event;
+			var l=oEvt.clientX-disX;
+			var t=oEvt.clientY-disY;
+			if(l<0) l=0;
+			if(l>oDiv1.offsetWidth-oDiv2.offsetWidth){
+				l=oDiv1.offsetWidth-oDiv2.offsetWidth
+			}
+			if(t<0) t=0;
+			if(t>oDiv1.offsetHeight-oDiv2.offsetHeight){
+				t=oDiv1.offsetHeight-oDiv2.offsetHeight
+			}
+			oDiv2.style.left=l+"px";
+			oDiv2.style.top=t+"px";
+			oDiv4.style.left=oDiv2.offsetLeft/(oDiv1.offsetWidth-oDiv2.offsetWidth)*(oDiv3.offsetWidth-oDiv4.offsetWidth)+"px";
+			oDiv4.style.top=oDiv2.offsetTop/(oDiv1.offsetHeight-oDiv2.offsetHeight)*(oDiv3.offsetHeight-oDiv4.offsetHeight)+"px";
+			
+			
+			
+		}
+		document.onmouseup=function(){
+			document.onmouseup=document.onmousemove=null;
+			
+		}
+		return false;
+		//ev.setCapture && ev.setCapture();
+		
+	}
+	
+	
+	
+	
+}
+</script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="div1">
+            <div id="div2"></div>
+        </div>
+        
+        <div id="div3">
+            <div id="div4"> </div>
+        </div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>甩盒子</title>
+<style>
+*{ margin:0; padding:0; list-style:none; font-family: "微软雅黑","张海山锐线体简"}
+#div1{width:100px;height:100px;background:red;position: absolute;left:0;top:0;}
+#div2{width:100px;height:100px;background:red;position: absolute;left:200px;top:0;}
+
+</style>
+<script>
+window.onload=function(){
+	drag('div1');
+	drag('div2');
+};
+function drag(id){
+	var oDiv=document.getElementById(id);
+	oDiv.onmousedown=function(ev){
+		clearInterval(oDiv.timer);
+		var lastX=0,lastY=0;
+		var speedX=0,speedY=0;
+		
+		var e=ev||event;
+		var disX=e.clientX-oDiv.offsetLeft;
+		var disY=e.clientY-oDiv.offsetTop;
+		document.onmousemove=function(ev){
+			var e=ev||event; 
+			
+			//记录新绿点,做新老替换
+			lastX=oDiv.offsetLeft;
+			lastY=oDiv.offsetTop;
+			
+			oDiv.style.left=e.clientX-disX+'px';
+			oDiv.style.top=e.clientY-disY+'px';	
+			
+			
+		};
+		document.onmouseup=function(){
+			document.onmousemove=document.onmouseup=null;	
+			
+			//取新green点		==	oDiv.offsetLeft/top
+			speedX=oDiv.offsetLeft-lastX;
+			speedY=oDiv.offsetTop-lastY;
+			
+			move(oDiv,speedX,speedY);
+		};
+		return false;
+	};
+};
+
+function move(obj,speedX,speedY){
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		
+		speedY+=3;//重力加速度
+		
+		var l=obj.offsetLeft+speedX;//计算
+		var t=obj.offsetTop+speedY;
+		//碰撞--反向+摩擦
+		if(t>document.documentElement.clientHeight-obj.offsetHeight){
+			t=document.documentElement.clientHeight-obj.offsetHeight;
+			speedY*=-0.8;//反向+摩擦
+			speedX*=0.8	//x+摩擦
+		}else if(t<0){
+			t=0	//限定，不超出去 
+			speedY*=-0.8;//反向+摩擦
+			speedX*=0.8	//x+摩擦
+		}
+		if(l>document.documentElement.clientWidth-obj.offsetWidth){
+			l=document.documentElement.clientWidth-obj.offsetWidth;
+			speedX*=-0.8;//反向+摩擦
+			speedY*=0.8	//x+摩擦
+		}else if(l<0){
+			l=0	//限定，不超出去 
+			speedX*=-0.8;//反向+摩擦
+			speedY*=0.8	//x+摩擦
+		}		
+		
+		obj.style.left=l+'px';
+		obj.style.top=t+'px';
+		
+		if(Math.abs(speedX)<1) speedX=0;
+		if(Math.abs(speedY)<1) speedY=0;
+		console.log(speedX,speedY);
+		if(speedX==0 && speedY==0){
+			clearInterval(obj.timer);	
+			console.log(speedX,speedY);
+		}
+		
+		
+	},30);
+}
+</script>
+</head>
+
+<body>
+
+<div id="div1"></div>
+<div id="div2"></div>
+
+</body>
+</html>

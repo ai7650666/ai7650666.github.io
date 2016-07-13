@@ -1,0 +1,109 @@
+
+
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>选项卡</title>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+<style>
+</style>
+<script src="js/move8.js"></script>
+<script>
+window.onload=function(){
+	var oPlay=document.getElementById('play');
+	var aHead=oPlay.children[2].children;
+	var aContent=oPlay.children[3];	
+	var oNext=oPlay.getElementsByClassName('next')[0];
+	var oPrev=oPlay.getElementsByClassName('prev')[0];
+	var now=0;
+	var bl=false;
+	aContent.innerHTML+=aContent.innerHTML;
+	aContent.style.width=aContent.children.length*600+"px";
+	for(var i=0;i<aHead.length;i++){
+		(function(index){
+				aHead[i].onclick=function(){
+					now=index;
+					tab();
+					
+				}
+			})(i)
+	}
+	function tab(){
+		for(var i=0;i<aHead.length;i++){
+			aHead[i].className="";
+		}
+		if(now==aHead.length){
+			aHead[0].className="active";
+		}else{
+			aHead[now].className="active";
+		}
+		
+		move(aContent,{"left":-now*600},{fn:function(){
+			bl=false;
+				if(now==aHead.length){
+					aContent.style.left=0;
+					now=0;
+					
+				}
+			}})
+	}
+	
+	oNext.onclick=next;
+	function next(){
+		if(bl) return;
+		bl=true
+		if(now==0){
+			now=aHead.length;
+		}
+		now++;
+		now%=aHead.length;
+		tab();
+	}
+	
+	oPrev.onclick=function(){
+		if(bl) return;
+		bl=true
+		if(now==0){
+			now=aHead.length;
+		}
+		now--;
+		now%=aHead.length;
+		tab();
+	}
+	var timer=setInterval(next,1000)
+	aContent.onmouseover=function(){
+		clearInterval(timer);
+	}
+	aContent.onmouseout=function(){
+		timer=setInterval(next,1000)
+	}
+};
+</script>
+</head>
+
+<body>
+
+<div class="box" id="play">
+    <p class="prev">&laquo;</p>
+    <p class="next">&raquo;</p>
+    <ol>
+        <li class="active">0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <ul>
+        <li><img src="img/apic20874.jpg" alt="图片丢失"/></li>
+        <li><img src="img/t01084c80e957862051.jpg" alt="图片丢失"/></li>
+        <li><img src="img/t01201c378cecf8d64f.jpg" alt="图片丢失"/></li>
+        <li><img src="img/t01504b5db0d3b660b0.jpg" alt="图片丢失"/></li>
+        <li><img src="img/t011023398675668ca4.jpg" alt="图片丢失"/></li>
+       
+    </ul>
+</div>
+
+</body>
+</html>
