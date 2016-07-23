@@ -1,0 +1,199 @@
+
+body{
+	font-family: "Microsoft YaHei";
+}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  width: 100%;
+}
+.swipe img{
+	width: 100%;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  	float:left;
+  	width:100%;
+  	position: relative;
+}
+.chart{
+	width: 100%;
+	height: 6px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+.chart ul{
+	list-style: none;
+}
+.chart ul li{
+	float: left;
+	width: 25%;
+	height: 6px;
+	background:orange;
+	opacity: 0.6;
+}
+.chart ul li.cur{
+	background:red;
+	opacity: 0.6;
+}
+nav{
+	width: 98%;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #f2f2f2;
+}
+nav ul{
+	list-style: none;
+}
+nav ul li{
+	width: 33.3333333%;
+	float: left;
+	height: 120px;
+	margin-bottom: 6px;
+	position: relative;
+}
+nav ul li div{
+	background-color: pink;
+	height: 120px;
+	border-radius: 6px;
+	text-align: center;
+}
+nav ul li:nth-child(3n+2),nav ul li:nth-child(3n+3), nav ul li:nth-child(13){
+	border-left:6px solid #f2f2f2;
+	box-sizing:border-box;
+}
+nav ul li.sm{
+	height: 65px;
+}
+nav ul li.sm div{
+	height: 65px;
+}
+nav ul li.gengsm{
+	height: 56px;
+}
+nav ul li.gengsm div{
+	height: 56px;
+}
+nav ul li:nth-child(1) div{background-color:#ff6073;}
+nav ul li:nth-child(2) div{background-color:#3d98ff;}
+nav ul li:nth-child(3) div{background-color:#8a95ff;}
+nav ul li:nth-child(4) div{background-color:#ff7081;}
+nav ul li:nth-child(5) div{background-color:#01bce4;}
+nav ul li:nth-child(6) div{background-color:#82a8ff;}
+nav ul li:nth-child(7) div{background-color:#62c500;}
+nav ul li:nth-child(8) div{background-color:#84d018;}
+nav ul li:nth-child(9) div{background-color:#ff8a44;}
+nav ul li:nth-child(10) div{background-color:#22ac38;}
+nav ul li:nth-child(11) div{background-color:#5ebe00;}
+nav ul li:nth-child(12) div{background-color:#ff9f08;}
+nav ul li:nth-child(13) div{background-color:#ffb517;}
+
+nav ul li a:link , nav ul li:visited{
+	text-decoration: none;
+}
+nav ul li div span{
+	font-size: 15px;
+	color:white;
+	line-height: 32px;
+}
+nav ul li.sm div span{
+	top: 6px;
+}
+nav ul li.gengsm div span{
+	top: 3px;
+}
+nav ul li div::before{
+	content:"";
+	position: absolute;
+	left: 50%;
+	top: 48px;
+	width: 46px;
+	height: 39px;
+	background: url(../images/icons.png) no-repeat 0 0;
+	-webkit-transform:translate(-50%,0);
+	background-size: 90px 210px;
+}
+nav ul li:nth-child(2) div::before{width: 57px;height: 34px;background-position: 0 -43px;}
+nav ul li:nth-child(3) div::before{width:50px; height:28px;top: 50px;background-position: 0 -78px;}
+nav ul li:nth-child(4) div::before{top: 36px;width:18px; height:17px;background-position: -58px -0px;}
+nav ul li:nth-child(5) div::before{top:39px;width:29px;height:12px;background-position:-60px -20px;}
+nav ul li:nth-child(6) div::before{top:38px;width:31px;height:15px;background-position:0 -190px;}
+nav ul li:nth-child(7) div::before{top:35px;width:18px;height:20px;background-position:-60px -40px;}
+nav ul li:nth-child(8) div::before{top:36px;width:28px;height:19px;background-position:-60px -65px;}
+nav ul li:nth-child(9) div::before{top:36px;width:19px;height:19px;background-position:-60px -90px;}
+nav ul li:nth-child(10) div::before{top:52px;width:44px;height:35px;background-position:0 -110px;}
+nav ul li:nth-child(11) div::before{top:50px;width:35px;height:39px;background-position:0 -150px;}
+nav ul li:nth-child(12) div::before{top:34px;width:21px;height:18px;background-position:-60px -110px;}
+nav ul li:nth-child(13) div::before{top:32px;width:17px;height:17px;background-position:-60px -130px;}
+
+
+.banner{
+	width: 99%;
+	margin: 0 auto;
+}
+.banner img{
+	width: 100%;
+}
+footer{
+	margin-top: 8px;
+}
+footer .tool-cn{
+	width: 100%;
+	height: 49px;
+	border-top: 1px solid #E8E8E8;
+	border-bottom:1px solid  #C2C2C2;
+}
+footer .tool-cn a{
+	float: left;
+	width: 33.33333%;
+	padding-top: 26px;
+	height: 18px;
+	text-align: center;
+	font-size:12px;
+	text-decoration: none;
+	color:#333333;
+	position: relative;
+}
+
+footer .tool-cn a::before{
+	content:"";
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 5px;
+	left: 50%;
+	-webkit-transform:translateX(-50%);
+	background: url(../images/icons.png) no-repeat;
+	background-size: 90px 210px;
+}
+footer .tool-cn a:nth-child(1)::before{
+	background-position: -60px -150px;
+}
+footer .tool-cn a:nth-child(2)::before{
+	background-position: -60px -170px;
+}
+footer .tool-cn a:nth-child(3)::before{
+	background-position: -60px -190px;
+}
+footer .tool-ver{
+	text-align: center;
+	line-height: 40px;
+	font-size: 12px;
+}
+footer .tool-ver a{
+	padding: 0 10px;
+	text-decoration: none;
+	color:#666;
+}
+
+footer p{
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+	color:#444;
+}

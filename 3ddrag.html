@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0; padding:0;}
+body{background:#000;background-size:100% 100%;overflow:hidden;}
+p{width:100%; height:100%;  text-align:center;  font-size:30px;color:#FFF;margin-top:100px;}
+#box{width:200px; height:200px;  margin:150px auto; position:relative; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) rotateX(45deg) rotateY(45deg); }
+#box div{ width:100%; height:100%; position:absolute;  text-align:center; line-height:200px; font-size:30px;color:#9C6}
+.back{background:rgba(255,0,0,0.5); -webkit-transform:translateZ(-100px);background:url(img/0-8J5ZlYY.jpg) no-repeat; background-size:100% 100%}
+.front{background:rgba(255,0,255,0.5); -webkit-transform:translateZ(100px);background:url(img/0-5T2rTUS.jpg) no-repeat; background-size:100% 100%}
+.top{background:rgba(0,255,0,0.5); -webkit-transform:translate(0,-100px) rotateX(90deg);background:url(img/0-bfGruJj.jpg) no-repeat; background-size:100% 100%}
+.bottom{background:rgba(0,0,255,0.5); -webkit-transform:translate(0,100px) rotateX(-90deg);background:url(img/84345-191Dau6.jpg) no-repeat; background-size:100% 100%}
+.left{background:rgba(0,255,255,0.5); -webkit-transform:translate(-100px,0) rotateY(-90deg);background:url(img/0-yXV5ba3.jpg) no-repeat; background-size:100% 100%}
+.right{background:rgba(255,255,0,0.5); -webkit-transform:translate(100px,0) rotateY(90deg);background:url(img/0-j2JXZ0H.jpg) no-repeat; background-size:100% 100%}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.getElementById('box');
+	var x = 0;
+	var y = 0;
+	var iSpeedX = 0;
+	var iSpeedY = 0;
+	var lastX = 0;
+	var lastY = 0;
+	var timer = null;
+	oBox.onmousedown=function(ev){
+		//clearInterval(timer);
+		var disX = ev.pageX-y;
+		var disY = ev.pageY-x;
+		document.onmousemove=function(ev){
+			x = ev.pageY-disY;
+			y = ev.pageX-disX;
+			oBox.style.WebkitTransform = 'perspective(800px) rotateX('+-x/3+'deg) rotateY('+y/3+'deg)';
+			iSpeedX = ev.pageX-lastX;
+			iSpeedY = ev.pageY-lastY;
+			lastX = ev.pageX;
+			lastY = ev.pageY;
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			clearInterval(timer);
+			timer = setInterval(function(){
+				iSpeedX*=0.95;
+				iSpeedY*=0.95;
+				x+=iSpeedY;
+				y+=iSpeedX;
+				oBox.style.WebkitTransform = 'perspective(800px) rotateX('+-x/3+'deg) rotateY('+y/3+'deg)';
+				if(Math.abs(iSpeedX)<1)iSpeedX=0;
+				if(Math.abs(iSpeedY)<1)iSpeedY=0;
+				if(iSpeedX==0&&iSpeedY==0){
+					clearInterval(timer);
+				}
+			},30);
+		};
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+
+<p class="title">可以通过鼠标拖动，以及任意旋转</p>
+<div id="box">
+	<div class="front">正</div>
+	<div class="back">后</div>
+	<div class="top">上</div>
+	<div class="bottom">下</div>
+	<div class="left">左</div>
+	<div class="right">右</div>
+</div>
+</body>
+</html>

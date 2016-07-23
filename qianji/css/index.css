@@ -1,0 +1,134 @@
+
+#header{
+	width: 1000px;
+	height: 143px;
+	margin:0 auto;
+}
+#header .logo{
+	width: 202px;
+	height: 115px;
+	margin-right: 35px;
+	background:url(../images/icons.png) no-repeat -4px -5px;
+	text-indent: -9999px;
+}
+#header .nav{
+ 	height:115px;
+}
+#header .nav ul li{
+    float: left;
+	height: 115px;
+	background-color: #fff;
+}
+#header .nav ul li a{
+	display: block;
+	height:64px;
+	padding:35px 10px 0 10px;
+}
+#header .nav ul li a span{
+	display: block;
+	text-align: center;
+}
+#header .nav ul li a:link,#header .nav ul li a:visited{
+	color:#393939;
+}
+#header .nav ul li a:hover{
+	color:#88BC29;
+}
+#header .nav ul li a span.chinaname{
+	font:16px/175% "微软雅黑","宋体";
+} 
+#header .nav ul li a span.englishname{
+	font:12px/12px "微软雅黑","宋体";
+	color:#C7C7C7;
+}
+#banner{
+	width: 100%;
+	height: 438px;
+	position: relative;
+}
+#banner ul.tutu li{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 438px;
+	float: left;
+	background:url(../images/banner1.jpg) no-repeat center top;
+	display: none;
+}
+#banner ul.tutu li.no1{
+	display: block;
+}
+#banner ul.tutu li.no2{
+	background:url(../images/banner2.jpg) no-repeat center top;
+}
+#banner ul.tutu li.no3{
+	background:url(../images/banner3.jpg) no-repeat center top;
+}
+#banner ul.dianul{
+	position: absolute;
+	right:120px;
+	bottom: 20px;
+	width: 80px;
+}
+#banner ul.dianul li{
+	float: left;
+	margin-right: 10px;
+	width: 10px;
+	height: 14px;
+	background-color:#0D6405;
+	opacity: 0.8;
+	padding-left: 4px;
+}
+#banner ul.dianul li.cur{
+	opacity: 1;
+}
+
+#banner ul.dianul li a:link,#banner ul.dianul li a:visited{
+	color:#fff;
+}
+#info{
+	width: 100%;
+	height:85px;
+	margin-bottom: 20px;
+}
+#info ul li{
+	float: left;
+	height: 85px;
+	text-indent: -9999px;
+}
+#info ul li.info1{
+	width: 169px;
+	background:url(../images/icons.png) no-repeat -3px -124px;
+}
+#info ul li.info2{
+	width: 139px;
+	background:url(../images/icons.png) no-repeat -3px -218px;
+}
+#info ul li.info3{
+	width: 139px;
+	background:url(../images/icons.png) no-repeat -3px -312px;
+}
+#info ul li.info4{
+	width: 184px;
+	background:url(../images/icons.png) no-repeat -4px -407px;
+}
+#footer{
+	height: 60px;
+}
+#footer ul{
+	width: 553px;
+}
+#footer ul li{
+	float: left;
+	border-right: 1px solid #ccc;
+}
+#footer ul li a{
+	padding: 0 15px;
+}
+#footer ul li a:link,#footer ul li a:visited{
+	color:#393939;
+}
+#footer ul li a:hover{
+	text-decoration: underline;
+}

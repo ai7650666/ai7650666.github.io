@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>简历</title>
+<link rel="stylesheet" href="css/common.css"/>
+<style>
+/*head开始*/
+#box{width:100%;height:665px;background:url(img/t01e512e915359d8d4c.jpg) no-repeat;background-size:100% 100%;}
+#box .word{width:100%;height:665px;background:rgba(0,0,0,0.5);}
+#box .word ul{position:absolute;top:20px;right:50px;z-index:5;position:fixed;}
+#box .word ul li{float:left;width:100px;height:50px;text-align:center;line-height:50px;}
+#box .word ul li.bar{ position:absolute;left:0;top:0;z-index:-1; background:rgba(0,0,153,0.5);border-radius:20px; }
+#box .word ul li a{color:#999;font:bold 20px 微软雅黑;}
+#box .word ul li a:hover{color:#F69;}
+#box .word h2{text-align:center;font:bold 60px  "MS Serif", "New York", serif;padding-top:50px;color:#666;}
+@keyframes test{
+	
+	from{-webkit-transform:scale(1,1);opacity:0.5;}
+	to{-webkit-transform:scale(1.03,1.03);opacity:0.8;}
+	
+}
+#box .word p{
+	width:200px;height:200px;background:rgba(60%,0%,80%,0.5);
+	border-radius:50%;text-align:center;font:bold 40px/200px 微软雅黑;
+	color:#999;position:absolute;top:65%;left:50%;margin-left:-100px;
+	animation:test 0.5s ease infinite alternate 0.5s running;
+}
+/*head结束*/
+/*instruction开始*/
+#itd{width:100%;height:665px;background:url(img/t018a5c7c513281c165.jpg) no-repeat;background-size:100% 100%;position:relative;}
+#itd .bg{width:100%;height:665px;background:rgba(0,0,0,0.5);}
+#box .bg h2{text-align:center;font:bold 60px  "MS Serif", "New York", serif;padding-top:50px;color:#666;}
+
+#itd .bg .more{
+	width:500px;padding:20px;position:absolute;top:200px;left:330px;font:bold 30px Arial, Helvetica, sans-serif;line-height:30px;
+	color:#000;
+}
+#itd .bg .more li{margin-bottom:30px;}
+#itd .bg .more ul li span{position:absolute;left:300px;}
+/*instruction结束*/
+/*experience开始*/
+#work{width:100%;height:665px;background:url(img/t018e5b02ac10fccf42.jpg) no-repeat;background-size:100% 100%;position:relative;}
+#work .bga{width:100%;height:665px;background:rgba(0,0,0,0.5);}
+#work .bga h2{text-align:center;font:bold 60px  "MS Serif", "New York", serif;padding-top:50px;color:#666;}
+
+#work .bga .more{
+	width:500px;padding:20px;position:absolute;top:200px;left:330px;font:bold 30px Arial, Helvetica, sans-serif;line-height:30px;
+}
+#work .bga .more li{margin-bottom:30px;}
+#itd .bg .more ul li span{position:absolute;left:300px;}
+/*experience结束*/
+</style>
+<script>   
+window.onload=function(){
+	/*导航开始*/
+	nav()
+	function nav(){
+		var oHead=document.querySelector(".word");
+		var oUl=oHead.children[0];
+		var oBar=oUl.children[4];
+		
+		var aLi=oUl.children;
+		var timer=null;
+		var l=0;
+		var nowPos=0;
+		for(var i=0;i<aLi.length-1;i++){
+			aLi[i].onmouseover=function(){
+				move(oBar,this.offsetLeft);
+			};	
+			aLi[i].onmouseout=function(){
+				move(oBar,nowPos);
+			};	
+			aLi[i].onclick=function(){
+				clearInterval(timer);
+				oBar.style.left=this.offsetLeft+'px';
+				nowPos=this.offsetLeft;
+				l=nowPos;
+			};	
+		}
+		function move(obj,iTarget){
+			clearInterval(timer);
+			var speed=0;
+			timer=setInterval(function(){
+				speed+=(iTarget-obj.offsetLeft)/6*(0.7);
+				speed *= 0.7;	
+				l+=speed;
+				
+				obj.style.left=Math.round(l)+'px';
+				if(Math.abs(speed)<1) speed=0;
+				
+				if(obj.offsetLeft==iTarget && speed==0){
+					clearInterval(timer);
+					
+				}
+			},30);
+		}
+	}
+/*导航结束*/
+}
+</script>
+</head>
+
+<body>
+<div id="box">
+    <!--head开始-->
+        <div class="word">
+             <ul class="nav ">
+                  <li><a href="javascript:;">首页</a></li>
+                  <li><a href="javascript:;">作品展示</a></li>
+                   <li><a href="javascript:;">简历</a></li>
+                  <li><a href="javascript:;">联系我</a></li>
+                  <li class="bar"></li>
+             </ul>
+            <h2>self-introduction</h2>
+            <h2><nobr>时间让我们沉淀，空间让我们成长。<nobr></h2>
+            <h2><nobr>没有天生的信心，只有不断培养的信心。<nobr></h2>
+            <a href ="javascript:;"><p>简历下载</p></a>
+        </div>
+    <!--head结束-->
+    <!--instruction开始-->
+        <div id="itd">
+        	<div class="bg">
+                <h2>person introduction</h2>
+                 <ul class="more">
+                    	<li>姓&nbsp;&nbsp;名： 	<span>张华伟</span> </li>
+                    	<li>电&nbsp;&nbsp;话： 	<span>18637407584</span></li>
+                        <li>邮&nbsp;&nbsp;箱：	<span> 1023309284@qq.com </span></li>
+                        <li>出生日期：	<span> 1991年</span></li>
+                        <li>现居地址：	<span> 上海市闵行区</span></li>
+                        <li>求职意向： 	<span>WEB前端开发</span></li>
+                    </ul>
+              </div>
+        </div>
+    <!--instruction结束-->
+     <!--工作经历开始-->
+        <div id="work">
+        	<div class="bga">
+                <h2>Work Experience</h2>
+                 <ul class="more">
+                 		<li>工作地址： 	<span>郑州多美源网络科技有限公司；</span> </li>
+                    	<li>1、编写Div+css WEB页面布局；</li>
+                        <li>2、网页开发；	</li>
+                        <li>3、</span></li>
+                        <li>4、</span></li>
+                        <li>5、</li>
+                    </ul>
+              </div>
+        </div>
+    <!--工作经历结束-->
+</div>
+
+</body>
+</html>

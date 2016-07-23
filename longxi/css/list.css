@@ -1,0 +1,73 @@
+body{
+	background:url(../images/banner_spread.png) no-repeat center top;
+}
+#banxin .news{
+	top: 298px;
+}
+#content{
+	top:350px;
+}
+#banxin .news .breadnav{
+	font:12px/54px "微软雅黑" "宋体";
+	padding-left: 20px;
+}
+#banxin .news .breadnav a.shouye:link,#banxin .news .breadnav a.shouye:link{
+	font:12px/54px "微软雅黑" "宋体";
+}
+#banxin .news .breadnav a.chuanbo:link,#banxin .news .breadnav a.chuanbo:link{
+	font:12px/54px "微软雅黑" "宋体";
+	color:orange;
+}
+#banxin .news .tab ul li{
+	float: left;
+}
+#banxin .news .tab ul li{
+	width:105px;
+	height:54px;
+	border-left:1px solid #ccc;
+}
+#banxin .news .tab ul li a{
+	padding:0 28px 0 28px;
+}
+#banxin .news .tab ul li a:link,#banxin .news .tab ul li a:visited{
+	font:12px/54px "微软雅黑","宋体";
+	color:#393939;
+}
+#content .inner{
+	border:1px solid #ccc;
+	width: 998px;
+}
+#content .inner .fenlei{
+	padding:39px 0 4px 19px;
+	overflow: hidden;
+}
+#content .inner .fenlei ul li{
+	width:306px;
+	height:335px;
+	float: left;
+	margin-right:22px; 
+	position: relative;
+
+}
+#content .inner .fenlei ul li a img{
+	width:306px;
+	height:335px;
+}
+#content .inner .fenlei ul li h3{
+	width:100%;
+	height:51px;
+    background: #000;
+    position: absolute;
+    bottom:0;
+    left:0;
+    opacity:0.6;
+    _fitler:alpha:opacity-60;
+}
+#content .inner .fenlei ul li span{
+	position: absolute;
+	bottom:0;
+	left:128px;
+	color:white;
+
+	line-height:51px;
+}

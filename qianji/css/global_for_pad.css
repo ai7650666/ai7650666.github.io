@@ -1,0 +1,27 @@
+#header{
+	width: 99%;
+}
+#header .logo{
+	width: 23.7%;
+}
+#header .nav{
+	width: 75.3%;
+}
+#header .nav ul li{
+	width: 11.5%;
+}
+#banner ul.tutu li{
+	background-size:20%;
+}
+#info ul li.info1 img{
+	width: 16.9%;
+}
+#info ul li.info2 img{
+	width: 13.9%;
+}
+#info ul li.info3 img{
+	width: 13.9%;
+}
+#info ul li.info1 img{
+	width: 18.4%;
+}

@@ -1,0 +1,32 @@
+.cl{
+	clear: both;
+}
+.h6{
+	height: 6px;
+	_font-size: 0;
+}
+.h8{
+	height: 8px;
+	_font-size: 0;
+}
+.h17{
+	height: 17px;
+	_font-size: 0;
+}
+.h19{
+	height: 19px;
+	_font-size: 0;
+}
+.h23{
+	height: 23px;
+	_font-size:0;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.nomargin{
+	margin:0 !important;
+}

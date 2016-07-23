@@ -1,0 +1,167 @@
+#banner{
+	position: relative;
+}
+#banner ul li{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:665px;
+	background:url(../images/banner1.jpg) no-repeat center top;
+	display: none;
+}
+#banner ul li.no1{
+	display: block;
+}
+#banner ul li.no2{
+	background:url(../images/banner2.jpg) no-repeat;
+}
+#banner ul li.no3{
+	background:url(../images/banner3.jpg) no-repeat;
+}
+#banner ul li.no4{
+	background:url(../images/banner4.jpg) no-repeat;
+}
+
+
+
+#banxin .video{
+	position: absolute;
+	top:504px;
+	right:33px;
+}
+
+#banxin .pro{
+	position: absolute;
+	top:217px;
+	left:6px;
+	width:9px;
+	height:271px;
+	background:url(../images/icons.png) no-repeat -437px -25px;
+}
+#banxin .pro ul li{
+	width:15px;
+	height:15px;
+	background:url(../images/icons.png) no-repeat -472px -10px; 
+	cursor: pointer;
+	position: absolute;
+}
+#banxin .pro ul li.no2{
+	top:76px;
+}
+#banxin .pro ul li.no3{
+	top:152px;
+}
+#banxin .pro ul li.no4{
+	top:228px;
+}
+#banxin .pro ul li span{
+	position: absolute;
+	top:-16px;
+	left:-70px;
+	width:104px;
+	height:43px;
+	background:url(../images/icons.png) no-repeat -311px -8px;
+	display: none;
+}
+#banxin .pro ul li.cur span{
+	display: block;
+}
+#banxin .pro ul li.no2 span{
+	background-position: -311px -83px;
+}
+#banxin .pro ul li.no3 span{
+	background-position: -311px -156px;
+}
+#banxin .pro ul li.no4 span{
+	background-position: -311px -231px;
+}
+
+
+#content .inner .buankuai{
+	padding:18px 0 0 18px;
+	overflow: hidden;
+}
+#content .inner .buankuai ul li{
+	float: left;
+	width: 304px;
+	margin-right: 24px;
+	margin-bottom: 24px;
+}
+#content .inner .buankuai .hd{
+	height:36px;
+}
+#content .inner .buankuai .hd h3{
+	float: left;
+	font:16px/36px "微软雅黑","宋体"
+}
+#content .inner .buankuai .hd a.more{
+	float: right;
+}
+#content .inner .buankuai .hd a.more:link,#content .inner .buankuai .hd a.more:visited{
+	text-decoration: underline;
+	line-height:36px;
+	color:#393939;
+}
+#content .inner .buankuai .qipao{
+	width:299px;
+	height: 193px;
+	background:url(../images/icons.png) no-repeat -1px -115px;
+	padding:12px 0 0 12px;
+}
+#content .inner .buankuai .jianjie{
+	font: 12px/170% "微软雅黑","宋体";
+	color: #393939;
+}
+#content .inner .redianlianjie{
+	border-top: 1px solid #E0E0E0;
+	padding: 0 20px 0 20px;
+	overflow: hidden;
+}
+#content .inner .redianlianjie h3{
+	float:left;
+	font:16px/62px "微软雅黑","宋体";
+}
+#content .inner .redianlianjie .button{
+	padding-top:30px;
+}
+#content .inner .redianlianjie .button span.leftbutton{
+	float: left;
+	width:27px;
+	height: 25px;
+	background:url(../images/icons.png) no-repeat -473px -29px;
+}
+#content .inner .redianlianjie .button span.rightbutton{
+	float: left;
+	width:29px;
+	height: 25px;
+	background:url(../images/icons.png) no-repeat -472px -55px;
+}
+#content .inner .redianlianjie .table{
+	width:465px;
+	height:105px;
+	border:1px solid #ccc;
+	background:#fff;
+}
+#content .inner .redianlianjie .table .picture{
+	width:92px;
+	padding-left:14px;
+	margin-right:10px;
+}
+#content .inner .redianlianjie .table .textarea{
+	width:319px;
+	padding-top: 11px;
+}
+#content .inner .redianlianjie .table .textarea p.title{
+	font:bold 14px/28px "微软雅黑","宋体";
+	color:#393939;
+}
+#content .inner .redianlianjie .table .textarea p.null{
+	font:12px/175% "微软雅黑","宋体";
+	color:#393939;
+}
+#content .inner .dibu{
+	width:1000px;
+	height:27px;
+	background:url(../images/dibubg.png) no-repeat;
+}
